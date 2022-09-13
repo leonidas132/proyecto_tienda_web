@@ -1,0 +1,157 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+body{
+	margin: 0;
+	font-family: 'Squada One', cursive;
+	
+}
+
+.vista{
+	
+	height: 100vh;
+   	background-image: url(imagen/logo2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixer;
+	background-position: center;
+	position: relative;
+}
+
+/* diseño del nav */
+ 
+/*.container{
+	background:rgba(8, 46, 78, 0.95);
+	height: 50px;
+}*/
+		
+.nav ul{
+	margin: 0;
+	list-style: none ;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.nav li:hover{
+	border: 3px solid #fff;
+	border-radius:3px ;
+	height: 47px;
+	transition: .3s ease all;
+	background: rgba(199, 246, 246, 0.79);
+}
+i{
+	font-size: 30px;
+	color:#fff;
+}
+
+.nav li a{
+	font-size: 20px;
+	display: block;
+	padding: 15px 35px;
+	color: #fff;
+	text-decoration:none;
+}
+/* diseño del  titulo y texto */
+.vista_text{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contend{
+	
+	width: 100%;
+	
+}
+.title{
+	margin:0;
+	text-align:center;
+	color: #fff;
+	font-size: 40px;
+	position: absolute;
+	left:41%;
+	top:50%;
+	transform: translatex(10%) translatey(-280%);
+	
+}
+ /* diseño del texto*/
+.div{
+	display: flex;
+	justify-content: center;
+	align-content:center;
+	width: 250%;
+	height:270px;
+	background:rgba(7, 59, 97, 0.86);
+	
+	left:50%;
+	top:50%;
+	transform: translatex(-20%) translatey(130%);
+	
+}
+.text{
+	
+	font-size:25px;
+	text-align: center;
+	color:#fff;
+	padding: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+/* finalisa diseño del texto*/
+
+/* diseño del jague*/
+.vista_wave{
+	
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 190px;
+	filter: brightness(1.75);
+}
+/* finaliza jague*/
+ 
+ /*diseño del logo y contacto*/
+
+.nosotros{
+	padding-top: 0;
+	text-align: center;
+	
+}
+.presentacion_picture{
+	width:200px;
+	height:200px;
+	border-radius: 50%;
+	margin-bottom: 10px;
+	object-fit: cover;
+	object-position: top;
+	background: rgba(217, 255, 251, 1);
+	
+	
+}
+.presentacion_text{
+    font-size: 25px;
+	padding: 30px;
+	padding-left: 90px;
+	padding-right: 90px;
+}
+
+.presentacion_cont{
+	font-size: 20px;
+	display: inline-block;
+	margin-top:30px;
+	background: rgb(69, 131, 167);
+	color: #fff;
+	text-decoration: none;
+	padding: 20px 40px; 
+	border-radius: 40px;
+	transform: translatex(2%) translatey(-50%);
+}
+
+.presentacion_cont:hover{
+	background: rgba(14, 32, 255, 0.16);
+
+}
+
+

@@ -1,0 +1,106 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+
+body{
+	font-family: 'Squada One', cursive;
+	font-size: 25px;
+	color:#fff;
+	background-image: url(imagen/principal.jpg);
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixer;
+	background-position: center;
+	position: relative;
+	height: 580px;
+}
+
+ul{
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	display: flex;
+}
+li{
+	height: 38px;
+}
+
+i{	 
+	font-size: 30px;
+}
+li a{
+  display: block;
+  padding: 5px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: .1s ease all;
+}
+li a:hover{
+	 box-shadow: 3px 0px 30px rgba(114, 131, 233, 0.17);
+	 outline: none;
+	 box-shadow: 3px 0px 30px
+}
+.form{
+	background: rgba(75, 110, 138, 0.62);
+	margin : 100px;
+	width: 30%;
+	left:50%;
+	top:50%;
+	transform: translatex(70%) translatey(-20%);	
+	padding: 40px;
+	height: 50px;
+    border-radius: 20px;
+    background: rgba(8, 76, 113, 0.56);
+    box-shadow: 10px 10px 50px rgb(234 253 253);
+
+}
+
+	
+	
+
+.cli{
+	
+	font-size: 15px;
+	background:rgba(255, 255, 255, 1);
+	height: 35px;
+	margin-left: 20px;
+	left:50%;
+	top:50%;
+	transform: translatex(100%) translatey(-20%);	
+	cursor: pointer;
+    transition: .1s ease all;
+    
+}
+button:hover{
+	 box-shadow: 3px 0px 30px rgba(114, 131, 233, 0.17);
+	 outline: none;
+	 box-shadow: 3px 0px 30px
+}
+.ven{
+	background:rgba(255, 255, 255, 1);
+	font-size: 15px;
+	height: 35px;
+	margin-left: 30px;
+	left:50%;
+	top:50%;
+	transform: translatex(100%) translatey(-20%);	
+	cursor: pointer;
+    transition: .1s ease all;
+}
+.vista_wave{
+	
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 101%;
+	height: 150px;
+	filter: brightness(1.75);
+	left:50%;
+	top:50%;
+	transform: translatex(-50%) translatey(283%);	
+}
+
+

@@ -1,0 +1,191 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+*{
+	box-sizing: border-box
+	
+}
+
+body{
+	font-family: 'Squada One', cursive;
+	font-size: 25px;
+	color:#fff;
+	background-image: url(imagen/principal.jpg);
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixer;
+	background-position: center;
+	position: relative;
+}
+
+	
+ul{
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	display: flex;
+}
+li{
+	height: 38px;
+}
+i{
+	font-size: 30px;
+}
+li a{
+	display: block;
+	padding: 5px;
+	color:#fff;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 40px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+li a:hover{
+    box-shadow: 3px 0px 30px rgba(114, 131, 233, 0.17);
+	outline: none;
+	box-shadow: 3px 0px 30px
+	
+}
+h1{
+	
+    width: 300px;
+	left:50%;
+	top:50%;
+	transform: translatex(250%) translatey(-20%);	
+	
+
+	
+}
+
+main{
+	max-width:800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+	border-radius: 20px;
+	background:rgba(8, 76, 113, 0.56);
+	box-shadow:10px 10px 50px rgb(234, 253, 253); 
+}
+.formulario{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px
+}
+/* diseño de los label */
+.formulario_label{
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+.formulario__grupo-input{
+	position: relative;
+}
+/* diseño de los input*/
+.formulario__input{
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+/* aqui le doy color a los borde */
+.formulario__input:focus{
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163,0.4);
+}
+/* diseño para los mensajes de imput */
+.formulario__input-error{
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+.formulario__input-error-activo{
+	display: block;
+	
+}
+.formulario__validacion-estado{
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+.formulario__mensaje,
+formulario__grupo-btn-opciones,
+formulario__mensaje-exito{
+	grid-column: span 2;
+}
+.formulario__mensaje{
+	height: 45px;
+	line-height: 45px;
+	background: #F66868;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+	
+}
+.formulario__mensaje-activo{
+	display: block;
+}
+.formulario__mensaje p{
+margin: 0;
+}
+
+.formulario__grupo-btn-opciones{
+	grid-column: span 2;
+	padding-left: 115px;
+
+	
+}
+.formulario__btn{
+	font-family: 'Squada One', cursive;
+	width: 20%;
+	height: 40px;
+	font-size: 20px;
+	background-color:#009999;
+	cursor: pointer;
+	border-radius: 6px;
+	transition: .1s ease all;
+
+}
+
+.formulario__btn:hover{
+    box-shadow: 3px 0px 30px rgba(114, 131, 233, 0.17);
+	outline: none;
+	box-shadow: 3px 0px 30px
+}
+
+.formulario__mensaje-exito{
+	
+	grid-column: span 2;
+	margin: 2;
+	color: #119200;
+	padding-left: 200px;
+	display: none;
+}
+.vista_wave{
+	
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 101%;
+	height: 190px;
+	filter: brightness(1.75);
+	left:50%;
+	top:50%;
+	transform: translatex(-50%) translatey(250%);	
+}
+/*media querys*/
+
+
+
+
+
+

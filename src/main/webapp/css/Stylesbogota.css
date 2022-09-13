@@ -1,0 +1,134 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+*{
+	box-sizing: border-box
+	
+}
+
+body{
+	height: 450px;
+	font-family: 'Squada One', cursive;
+	font-size: 25px;
+	color:#fff;
+	background-image: url(imagen/principal.jpg);
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixer;
+	background-position: center;
+	position: relative;
+}
+
+	
+ul{
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	display: flex;
+}
+li{
+	height: 38px;
+}
+
+i{	 
+	font-size: 30px;
+}
+li a{
+  display: block;
+  padding: 5px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: .1s ease all;
+}
+li a:hover{
+	 box-shadow: 3px 0px 30px rgba(114, 131, 233, 0.17);
+	 outline: none;
+	 box-shadow: 3px 0px 30px
+}
+
+h1{
+	text-align: center;
+	font-size: 40px;
+}
+div{
+	text-align: center;
+}
+
+.formulario{
+	max-width: 800px;
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(8, 76, 113, 0.56);
+    box-shadow: 10px 10px 50px rgb(234 253 253);
+}
+
+#usuario:hover{
+	background: rgba(82, 178, 195, 0.97);
+}
+#usuario{
+	height: 45px;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: 'Squada One', cursive;
+    font-size: 20px;
+    background-color: #009999;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: .1s ease all;
+}
+#cliente:hover{
+	background: rgba(82, 178, 195, 0.97);
+}
+#cliente{
+	height: 45px;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: 'Squada One', cursive;
+    font-size: 20px;
+    background-color: #009999;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: .1s ease all;
+}
+#venta:hover{
+	background: rgba(82, 178, 195, 0.97);
+}
+#venta{
+	height: 45px;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: 'Squada One', cursive;
+    font-size: 20px;
+    background-color: #009999;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: .1s ease all;
+}
+th{
+ font-size: 25px;	
+ border: 40px;
+ background:rgba(128, 253, 176, 0.12);
+}
+.vista_wave{
+	
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 101%;
+	height: 180px;
+	filter: brightness(1.75);
+	left:50%;
+	top:50%;
+	transform: translatex(-50%) translatey(250%);	
+}
+button:hover {
+	
+     box-shadow: 3px 0px 30px rgba(114, 131, 233, 0.17);
+	 outline: none;
+	 box-shadow: 3px 0px 30px
+	 }

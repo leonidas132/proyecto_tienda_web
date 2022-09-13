@@ -1,0 +1,190 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+*{
+	font-family: 'Squada One', cursive;
+	box-sizing: border-box;
+	
+}
+
+	input::placeholder {
+  	color: #a8a8a8;
+  	font-size: 1em;
+  	font-style: italic;
+	}
+
+	.field_set{
+  	border-color: #00d7d7;
+  	border-style: solid;
+	}
+
+	.form-container{
+	    margin: 70px;
+       	position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-60%,-20%);
+        width: 1000px;
+       
+        padding: 90px 20px;
+        border-radius: 20px;
+        box-shadow:10px 10px 50px rgb(234, 253, 253);
+	}
+	
+	h1 {
+	    width:20%;
+	    height:10px;
+	    margin: 0;
+		padding-top: 40px;
+		justify-content: center;
+		align-content:center;
+		top: 50%;
+        left: 50%;
+       transform: translatex(210%) translatey(-60%);
+         /*width: 1000px;*/
+		
+		
+	}
+
+ul{
+
+	width:auto;
+	height: 40px;
+	margin: 0;
+	list-style: none;
+	padding:  0px;
+	display: flex;
+	top: 50%;
+    left: 50%;
+    transform: translatex(1%) translatey(-90%);
+}
+li{
+	height: 38px;
+	
+}
+i{
+	font-size: 30px;
+	
+}
+li a{
+	display: block;
+	padding: 5px;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 40px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+li a:hover{
+	 box-shadow: 3px 0px 30px rgba(114, 131, 233, 0.17);
+	 outline: none;
+	 box-shadow: 3px 0px 30px
+}
+	.formulario{
+		
+		gap: 10px;
+	}
+	.formulario_btn1{
+		background-color:#009999;
+		font-size: 15px;
+		padding: 10px 20px;
+		color: #fff; 
+		text-decoration:none;
+		border-radius: 10px;
+	    box-shadow:10px 10px 50px rgb(234, 253, 253);
+	}
+	.formulario_btn2{
+		background-color:#009999;
+		font-size: 15px;
+		
+		padding: 10px 20px;
+		color: #fff;
+		text-decoration:none;
+		border-radius: 10px;
+	    box-shadow:10px 10px 50px rgb(234, 253, 253);
+	}
+	.formulario_btn3{
+		background-color:#009999;
+		font-size: 15px;
+		
+		padding: 10px 20px;
+		color: #fff;
+		text-decoration:none;
+		border-radius: 10px;
+	    box-shadow:10px 10px 50px rgb(234, 253, 253);
+	
+	}
+	.formulario_btn4{
+		background-color:#009999;
+		font-size: 15px;
+		
+		padding: 10px 20px;
+		color: #fff;
+		text-decoration:none;
+		border-radius: 10px;
+	    box-shadow:10px 10px 50px rgb(234, 253, 253);
+		
+	}
+	.formulario_btn5{
+		background-color:#009999;
+		font-size: 20px;
+		padding: 10px 180px;
+		color: #fff;
+		text-decoration:none;
+		border-radius: 10px;
+	    box-shadow:1px 1px 25px rgb(234, 253, 253);
+    	
+    	left: 35%;
+    	top: 80%;
+    	display: flex;
+  		justify-content: center;
+		
+	}
+	
+	
+	.titulo
+	{
+  		margin-left: 10px;
+  		margin-right: 10px;
+ 
+  		padding-left: 10px;
+  		padding-right: 10px;
+	}
+	
+	.titulo2
+	{
+  		
+   		padding-left: 10px;
+  		padding-right: 50px;
+	}
+
+	.campos{
+		
+		width:100%;
+		height:100px;
+		display: flex;
+        align-items: center;
+		display: grid;
+    	grid-template-columns: 100px 100px 100px;
+    	grid-template-rows: 50px;
+	}
+	
+	
+	
+	.campos2{
+		
+		width:100%;
+		height:100px;
+		display: flex;
+        align-items: center;
+		
+	}
+	.busqueda{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	}
+
+
