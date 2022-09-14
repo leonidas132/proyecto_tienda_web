@@ -1,6 +1,6 @@
 package modelo;
 
-public class ProductosDTO {
+public class Producto {
 	
 	private long codigo_producto;
 	private double ivacompra;
@@ -11,7 +11,7 @@ public class ProductosDTO {
 	
 	
 	
-	public ProductosDTO(long codigo_producto, double ivacompra, long nitproveedor, String nombre_producto,
+	public Producto(long codigo_producto, double ivacompra, long nitproveedor, String nombre_producto,
 			double precio_compra, double precio_venta) {
 		this.codigo_producto = codigo_producto;
 		this.ivacompra = ivacompra;
@@ -22,12 +22,12 @@ public class ProductosDTO {
 	}
 
 	
-	public ProductosDTO() {
+	public Producto() {
 
 	}
 
 
-	public ProductosDTO(long codigo_producto) {
+	public Producto(long codigo_producto) {
 		this.codigo_producto = codigo_producto;
 	}
 

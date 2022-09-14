@@ -1,13 +1,13 @@
 package modelo;
 
-public class ProveedorDTO {
+public class Proveedor {
     private long Nit;
     private String Nombre_proveedor;
     private String Direccion;
     private String Telefono ;
     private String Ciudad ;
     
-   public ProveedorDTO(long Nit,String Nombre_proveedor,String Direccion,String Telefono,String Ciudad) {
+   public Proveedor(long Nit,String Nombre_proveedor,String Direccion,String Telefono,String Ciudad) {
 	   this.Nit=Nit;
 	   this.Nombre_proveedor=Nombre_proveedor;
 	   this.Direccion=Direccion;
@@ -26,7 +26,7 @@ public class ProveedorDTO {
 
 
 
-public ProveedorDTO(long nit) {
+public Proveedor(long nit) {
 	Nit = nit;
 }
 

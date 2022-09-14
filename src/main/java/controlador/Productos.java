@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import modelo.ProductosDAO;
-import modelo.ProductosDTO;
+import modelo.Producto;
 
 /**
  * Servlet implementation class Productos
@@ -63,7 +63,7 @@ public class Productos extends HttpServlet {
 		String Url="C:/ProgramData/MySQL/MySQL Server 8.0/Uploads";
 		
 		ProductosDAO prodaoList=new ProductosDAO();
-    	List<ProductosDTO> productos=new ArrayList<>();
+    	List<Producto> productos=new ArrayList<>();
     	
     	
     	String accion=request.getParameter("accion");

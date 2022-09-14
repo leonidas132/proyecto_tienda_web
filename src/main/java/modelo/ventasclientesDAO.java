@@ -11,15 +11,15 @@ public class ventasclientesDAO {
     Connection cnn=con.conexionbd();
     PreparedStatement ps;
     ResultSet rs;
-    ventasclientesDTO ventasclientedto;
+    Ventascliente ventasclientedto;
     
-    public ArrayList<ventasclientesDTO>consultasgeneralventas(){
-    	ArrayList<ventasclientesDTO>lista=new ArrayList<ventasclientesDTO>();
+    public ArrayList<Ventascliente>consultasgeneralventas(){
+    	ArrayList<Ventascliente>lista=new ArrayList<Ventascliente>();
     	try {
 			ps=cnn.prepareStatement("SELECT ventas.cedula_cliente, ventas.total_venta,  clientes.nombre_cliente FROM ventas INNER JOIN clientes  ON clientes.cedula_cliente = ventas.cedula_cliente");
 			rs=ps.executeQuery();
 			while(rs.next()) {
-				ventasclientedto = new ventasclientesDTO(rs.getLong(1),rs.getString(3),rs.getLong(2));
+				ventasclientedto = new Ventascliente(rs.getLong(1),rs.getString(3),rs.getLong(2));
 				lista.add(ventasclientedto);
 			}
 		} catch (SQLException e) {

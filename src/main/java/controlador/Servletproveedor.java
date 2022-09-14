@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
 import modelo.ProveedorDAO;
-import modelo.ProveedorDTO;
+import modelo.Proveedor;
 
 /**
  * Servlet implementation class Servletproveedor
@@ -49,9 +49,9 @@ public class Servletproveedor extends HttpServlet {
 		String Telefono;
 		String Ciudad;
 		
-		ProveedorDTO DTO;
+		Proveedor DTO;
 		ProveedorDAO DAO;
-		 ProveedorDTO proveedordto;
+		 Proveedor proveedordto;
 		
 		//Ingresar proveedores//
 		if(request.getParameter("crear")!=null) {
@@ -61,7 +61,7 @@ public class Servletproveedor extends HttpServlet {
 			Telefono=request.getParameter("telefono");
 			Ciudad=request.getParameter("ciudad");
 			
-			DTO=new ProveedorDTO(Nit, Nombre, Direccion, Telefono, Ciudad);
+			DTO=new Proveedor(Nit, Nombre, Direccion, Telefono, Ciudad);
 			DAO=new ProveedorDAO();
 			X=DAO.insertarProveedor(DTO);
 			if(X==true) {
@@ -78,7 +78,7 @@ public class Servletproveedor extends HttpServlet {
 		if (request.getParameter("consultar")!=null) {
 			
 			Nit=Long.parseLong(request.getParameter("Nit"));
-			DTO=new ProveedorDTO(Nit);
+			DTO=new Proveedor(Nit);
 			DAO=new ProveedorDAO();
 			proveedordto=DAO.consultar(DTO);
 			if(proveedordto!=null) {
@@ -115,7 +115,7 @@ public class Servletproveedor extends HttpServlet {
 		    Telefono=request.getParameter("telefono");
 			
 			
-			DTO=new ProveedorDTO(Nit,Nombre,Direccion,Telefono,Ciudad);
+			DTO=new Proveedor(Nit,Nombre,Direccion,Telefono,Ciudad);
 			DAO=new ProveedorDAO();
 			dat=DAO.Actualizar(DTO);
 			System.out.println(dat);
@@ -138,7 +138,7 @@ public class Servletproveedor extends HttpServlet {
 		if(request.getParameter("eliminar")!=null) {
 			int x=0;
 			Nit=Long.parseLong(request.getParameter("Nit"));
-			DTO=new ProveedorDTO(Nit);
+			DTO=new Proveedor(Nit);
 			DAO=new ProveedorDAO();
 			x=DAO.eliminar(DTO);
 			if(x>0) {

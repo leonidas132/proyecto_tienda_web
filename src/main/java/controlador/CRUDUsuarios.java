@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import com.google.gson.Gson;
 
 import modelo.UsuariosDAO;
-import modelo.UsuariosDTO;
+import modelo.Usuario;
 
 /**
  * Servlet implementation class CRUDUsuarios
@@ -51,9 +51,9 @@ public class CRUDUsuarios extends HttpServlet {
 		String Password;
 		String Usuario;
 		
-		UsuariosDTO usdto;
+		Usuario usdto;
 		UsuariosDAO usdao;
-		UsuariosDTO registro;
+		Usuario registro;
 		
 		
 		//Insertar Usuarios
@@ -64,7 +64,7 @@ public class CRUDUsuarios extends HttpServlet {
 			Password=request.getParameter("password2");
 			Usuario=request.getParameter("usuario");
 			
-			usdto = new UsuariosDTO(Usuario_Cedula, Email_Usuario, Nombre_Usuario, Password, Usuario);
+			usdto = new Usuario(Usuario_Cedula, Email_Usuario, Nombre_Usuario, Password, Usuario);
 			usdao = new UsuariosDAO();
 			
 			X=usdao.InsertarUsuarios(usdto);
@@ -86,7 +86,7 @@ public class CRUDUsuarios extends HttpServlet {
 			
 			
 			Usuario_Cedula=Long.parseLong(request.getParameter("cedula"));
-			usdto  = new UsuariosDTO(Usuario_Cedula);
+			usdto  = new Usuario(Usuario_Cedula);
 			usdao = new UsuariosDAO();
 			
 			registro=usdao.ConsultarUsuarios(usdto);
@@ -134,7 +134,7 @@ public class CRUDUsuarios extends HttpServlet {
 			Password=request.getParameter("password2");
 			Usuario=request.getParameter("usuario");
 			
-			usdto = new UsuariosDTO(Usuario_Cedula, Email_Usuario, Nombre_Usuario, Password, Usuario);
+			usdto = new Usuario(Usuario_Cedula, Email_Usuario, Nombre_Usuario, Password, Usuario);
 			usdao = new UsuariosDAO();
 			
 			X=usdao.ModificarUsuarios(usdto);
@@ -152,7 +152,7 @@ public class CRUDUsuarios extends HttpServlet {
 		//Eliminar Usuarios
 		if(request.getParameter("eliminar")!=null) {
 			Usuario_Cedula=Long.parseLong(request.getParameter("cedula"));
-			usdto =new UsuariosDTO(Usuario_Cedula);
+			usdto =new Usuario(Usuario_Cedula);
 			usdao =new UsuariosDAO();
 			
 			X=usdao.EliminarUsuarios(usdto);

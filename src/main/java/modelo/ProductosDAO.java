@@ -17,7 +17,7 @@ public class ProductosDAO {
 	Connection cnn=con.conexionbd();
 	PreparedStatement ps;
 	ResultSet rs;
-	ProductosDTO prodto;
+	Producto prodto;
 	
 	
 	public boolean cargarProctos(String URL) {
@@ -36,14 +36,14 @@ public class ProductosDAO {
 		return resul;
 	}
 	
-	public ProductosDTO ConsultarProducto(ProductosDTO pd) {
+	public Producto ConsultarProducto(Producto pd) {
 		
 		try {
 			ps=cnn.prepareStatement("SELECT * FROM productos WHERE codigo_producto=?");
 			ps.setLong(1, pd.getCodigo_producto());
 			rs=ps.executeQuery();
 			if(rs.next()) {
-				prodto=new ProductosDTO(rs.getLong(1), rs.getLong(2), rs.getLong(3), rs.getString(4), rs.getDouble(5),rs.getDouble(6));
+				prodto=new Producto(rs.getLong(1), rs.getLong(2), rs.getLong(3), rs.getString(4), rs.getDouble(5),rs.getDouble(6));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -54,7 +54,7 @@ public class ProductosDAO {
 	}
 	
 	
-	public ProductosDTO listarId(long id) {
+	public Producto listarId(long id) {
 		String sql="SELECT * FROM productos WHERE codigo_producto"+id;
 		try {
 			ps=cnn.prepareStatement(sql);
@@ -76,16 +76,16 @@ public class ProductosDAO {
 	}
 	
 	
-	public List<ProductosDTO> Listar (){
+	public List<Producto> Listar (){
 		
 		String SQL="SELECT * FROM productos";
-		List<ProductosDTO>lista=new ArrayList<>();
+		List<Producto>lista=new ArrayList<>();
 		
 		try {
 			ps=cnn.prepareStatement(SQL);
 			rs=ps.executeQuery();
 			while (rs.next()) {
-				prodto=new ProductosDTO(rs.getLong(1), 
+				prodto=new Producto(rs.getLong(1), 
 						rs.getLong(2), 
 						rs.getLong(3), 
 						rs.getString(4), 

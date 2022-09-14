@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import modelo.ClientesDAO;
-import modelo.ClientesDTO;
+import modelo.Clientes;
 import modelo.UsuariosDAO;
-import modelo.UsuariosDTO;
+import modelo.Usuario;
 
 /**
  * Servlet implementation class consultasgenerales
@@ -48,9 +48,9 @@ public class consultasgeneralesusuario extends HttpServlet {
 		if (request.getParameter("usuario")!=null) {
 			
 		}
-		ArrayList<UsuariosDTO>lista=new ArrayList<UsuariosDTO>();
+		ArrayList<Usuario>lista=new ArrayList<Usuario>();
 		 UsuariosDAO usudao=new UsuariosDAO();
-		 UsuariosDTO dto=new UsuariosDTO();
+		 Usuario dto=new Usuario();
 		 lista=usudao.consultageneralusuarios();
 		 Gson json=new Gson();
 		 out.print(json.toJson(lista));

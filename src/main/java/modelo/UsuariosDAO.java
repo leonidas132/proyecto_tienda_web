@@ -13,10 +13,10 @@ public class UsuariosDAO {
 	Connection cnn=con.conexionbd();
 	PreparedStatement ps;
 	ResultSet rs;
-	UsuariosDTO usuariosdto=null;
+	Usuario usuariosdto=null;
 	
 	
-	public boolean InsertarUsuarios(UsuariosDTO us) {
+	public boolean InsertarUsuarios(Usuario us) {
 		
 		int R;
 		boolean Dato=false;
@@ -41,7 +41,7 @@ public class UsuariosDAO {
 		return Dato;	
 	}
 	
-	public UsuariosDTO ConsultarUsuarios (UsuariosDTO us) {
+	public Usuario ConsultarUsuarios (Usuario us) {
 		
 		try {
 			ps=cnn.prepareStatement("SELECT * FROM usuarios WHERE cedula_usuario=?");
@@ -49,7 +49,7 @@ public class UsuariosDAO {
 			rs=ps.executeQuery();
 			
 			if(rs.next()) {
-				usuariosdto = new UsuariosDTO(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+				usuariosdto = new Usuario(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
 			}else
 				return null;
 			
@@ -60,7 +60,7 @@ public class UsuariosDAO {
 		return usuariosdto;
 	}
 	
-	public boolean ModificarUsuarios(UsuariosDTO us) {
+	public boolean ModificarUsuarios(Usuario us) {
 		boolean Dato=false;
 		int M;
 		
@@ -85,7 +85,7 @@ public class UsuariosDAO {
 		return Dato;
 	}
 	
-	public boolean EliminarUsuarios(UsuariosDTO us) {
+	public boolean EliminarUsuarios(Usuario us) {
 		boolean Dato=false;
 		int E;
 		
@@ -106,8 +106,8 @@ public class UsuariosDAO {
 	}
 	
 	
-	public UsuariosDTO Login (UsuariosDTO us) {
-		UsuariosDTO US=null;
+	public Usuario Login (Usuario us) {
+		Usuario US=null;
 		
 		String sql="SELECT * FROM usuarios WHERE usuario=? and password=?";
 		try {
@@ -116,7 +116,7 @@ public class UsuariosDAO {
 			ps.setString(2, us.getPassword());
 			rs=ps.executeQuery();
 			if(rs.next()) {
-				US=new UsuariosDTO(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+				US=new Usuario(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -124,13 +124,13 @@ public class UsuariosDAO {
 		}
 		return US;
 	}
-	public ArrayList<UsuariosDTO>consultageneralusuarios(){
-		ArrayList<UsuariosDTO>lista=new ArrayList<UsuariosDTO>();
+	public ArrayList<Usuario>consultageneralusuarios(){
+		ArrayList<Usuario>lista=new ArrayList<Usuario>();
 		try {
 			ps=cnn.prepareStatement("SELECT *FROM usuarios");
 			rs=ps.executeQuery();
 			while(rs.next()) {
-				usuariosdto=new UsuariosDTO(rs.getLong(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+				usuariosdto=new Usuario(rs.getLong(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
 				lista.add(usuariosdto);
 				
 			}

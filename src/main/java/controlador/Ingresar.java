@@ -14,9 +14,9 @@ import javax.servlet.http.HttpSession;
 import com.mysql.cj.Session;
 
 import modelo.ProductosDAO;
-import modelo.ProductosDTO;
+import modelo.Producto;
 import modelo.UsuariosDAO;
-import modelo.UsuariosDTO;
+import modelo.Usuario;
 
 /**
  * Servlet implementation class Ingresar
@@ -52,9 +52,9 @@ public class Ingresar extends HttpServlet {
 		clave=request.getParameter("contra");
 		
 		ProductosDAO pdo=new ProductosDAO();
-		List<ProductosDTO> ProductosDTO=new ArrayList<ProductosDTO>();
+		List<Producto> Producto=new ArrayList<Producto>();
 		
-		ProductosDTO=pdo.Listar();
+		Producto=pdo.Listar();
 		
 		
 		
@@ -65,8 +65,8 @@ public class Ingresar extends HttpServlet {
 			response.sendRedirect("menuprincipal.jsp");
 			
 		}else {
-			UsuariosDTO usdto;
-			UsuariosDTO login=new UsuariosDTO(clave, usuario);
+			Usuario usdto;
+			Usuario login=new Usuario(clave, usuario);
 			UsuariosDAO lo= new UsuariosDAO();
 			usdto=lo.Login(login);
 			
@@ -78,7 +78,7 @@ public class Ingresar extends HttpServlet {
 					String uss=usdto.getNombre_Usuario();
 					sesion.setAttribute("AccesoUserID", uss);
 					sesion.setAttribute("Inicio", usdto);
-					request.setAttribute("productos", ProductosDTO);
+					request.setAttribute("productos", Producto);
 					request.getRequestDispatcher("carritoVentas.jsp").forward(request, response);
 			}
 				else

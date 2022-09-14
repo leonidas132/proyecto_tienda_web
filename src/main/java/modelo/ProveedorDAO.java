@@ -10,9 +10,9 @@ public class ProveedorDAO {
 	Connection cnn=con.conexionbd();
 	PreparedStatement ps;
 	ResultSet rs;
-	ProveedorDTO proveedor;
+	Proveedor proveedor;
 	
-	public boolean insertarProveedor(ProveedorDTO  dto) {
+	public boolean insertarProveedor(Proveedor  dto) {
 		int r;
 		boolean dat= false;
 		try {
@@ -37,14 +37,14 @@ public class ProveedorDAO {
 	
 	
 	
-	public ProveedorDTO consultar(ProveedorDTO dto) {
+	public Proveedor consultar(Proveedor dto) {
 		try {
 			ps=cnn.prepareStatement("SELECT * FROM proveedores WHERE nitproveedor=?");
 			ps.setLong(1,dto.getNit());
 			rs=ps.executeQuery();
 			if(rs.next()) {
 			   
-				proveedor=new ProveedorDTO(rs.getLong(1),rs.getString(4),rs.getString(3),rs.getString(5),rs.getString(2));
+				proveedor=new Proveedor(rs.getLong(1),rs.getString(4),rs.getString(3),rs.getString(5),rs.getString(2));
 			}
 			else {
 				return null;
@@ -60,7 +60,7 @@ public class ProveedorDAO {
 	
 	
 	
-	public int Actualizar(ProveedorDTO dto ) {
+	public int Actualizar(Proveedor dto ) {
 		int x=0;
 		try {
 			ps=cnn.prepareStatement("UPDATE proveedores SET ciudad_proveedor=?,direccion_proveedor=?,nombre_proveedor=?,telefono_proveedor=? WHERE nitproveedor=?");
@@ -76,7 +76,7 @@ public class ProveedorDAO {
 		return x;
 	}
 	
-	public int eliminar (ProveedorDTO dto) {
+	public int eliminar (Proveedor dto) {
 		int x=0;
 		try {
 			ps=cnn.prepareStatement("DELETE  FROM proveedores WHERE nitproveedor=?");
