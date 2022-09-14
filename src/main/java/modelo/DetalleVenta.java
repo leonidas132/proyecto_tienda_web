@@ -1,6 +1,6 @@
 package modelo;
 
-public class DetalleVentaDTO {
+public class DetalleVenta {
 	
 	private long codigo_detalle_venta;
 	private int cantidad_producto;
@@ -11,7 +11,7 @@ public class DetalleVentaDTO {
 	private double valoriva;
 	
 	
-	public DetalleVentaDTO(int cantidad_producto, long codigo_producto, long codigo_venta,
+	public DetalleVenta(int cantidad_producto, long codigo_producto, long codigo_venta,
 			double valor_total, double valor_venta, double valoriva) {
 
 		this.cantidad_producto = cantidad_producto;

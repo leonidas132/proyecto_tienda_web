@@ -1,6 +1,6 @@
 package modelo;
 
-public class UsuariosDTO {
+public class Usuario {
 	
 	private long Cedula_Usuario;
 	private String Email_Usuario;
@@ -9,7 +9,7 @@ public class UsuariosDTO {
 	private String Usuario;
 	
 	
-	public UsuariosDTO(long cedula_Usuario, String email_Usuario, String nombre_Usuario, String password,
+	public Usuario(long cedula_Usuario, String email_Usuario, String nombre_Usuario, String password,
 			String usuario) {
 		Cedula_Usuario = cedula_Usuario;
 		Email_Usuario = email_Usuario;
@@ -22,7 +22,7 @@ public class UsuariosDTO {
 	
 	
 
-	public UsuariosDTO() {
+	public Usuario() {
 		super();
 	}
 
@@ -30,12 +30,12 @@ public class UsuariosDTO {
 
 
 
-	public UsuariosDTO(String password, String usuario) {
+	public Usuario(String password, String usuario) {
 		Password = password;
 		Usuario = usuario;
 	}
 
-	public UsuariosDTO(long cedula_Usuario) {
+	public Usuario(long cedula_Usuario) {
 		Cedula_Usuario = cedula_Usuario;
 	}
 

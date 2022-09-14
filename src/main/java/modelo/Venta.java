@@ -1,6 +1,6 @@
 package modelo;
 
-public class VentasDTO {
+public class Venta {
 	
 	private long codigo_venta;
 	private long cedula_cliente;
@@ -10,7 +10,7 @@ public class VentasDTO {
 	private double valor_venta;
 	
 	
-	public VentasDTO(long codigo_venta, long cedula_cliente, long cedula_usuario, double ivaventa, double total_venta,
+	public Venta(long codigo_venta, long cedula_cliente, long cedula_usuario, double ivaventa, double total_venta,
 			double valor_venta) {
 		this.codigo_venta = codigo_venta;
 		this.cedula_cliente = cedula_cliente;
@@ -22,7 +22,7 @@ public class VentasDTO {
 	
 	
 
-	public VentasDTO(long cedula_cliente, long cedula_usuario, double ivaventa, double total_venta,
+	public Venta(long cedula_cliente, long cedula_usuario, double ivaventa, double total_venta,
 			double valor_venta) {
 		this.cedula_cliente = cedula_cliente;
 		this.cedula_usuario = cedula_usuario;
@@ -33,7 +33,7 @@ public class VentasDTO {
 	
 	
 
-	public VentasDTO() {
+	public Venta() {
 	}
 
 
@@ -108,7 +108,7 @@ public class VentasDTO {
 	private double TotalSinIva;
 
 
-	public VentasDTO(String nombre_Producto, double precio_Procuto, double sub_total, int cantidad,
+	public Venta(String nombre_Producto, double precio_Procuto, double sub_total, int cantidad,
 			int codigo_Producto) {
 		Nombre_Producto = nombre_Producto;
 		Precio_Procuto = precio_Procuto;

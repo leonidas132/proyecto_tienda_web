@@ -13,13 +13,13 @@ import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
 import modelo.ClientesDAO;
-import modelo.ClientesDTO;
+import modelo.Clientes;
 import modelo.ProductosDAO;
-import modelo.ProductosDTO;
+import modelo.Producto;
 import modelo.VentasDAO;
-import modelo.VentasDTO;
+import modelo.Venta;
 import modelo.DetalleVentaDAO;
-import modelo.DetalleVentaDTO;
+import modelo.DetalleVenta;
 
 /**
  * Servlet implementation class Ventas
@@ -59,10 +59,10 @@ public class Ventas extends HttpServlet {
 			long Cedula;
 			String Nombre;
 			
-			ClientesDTO listado;
+			Clientes listado;
 			Cedula=Long.parseLong(request.getParameter("Cedula"));
 			ClientesDAO clidao=new ClientesDAO();
-			ClientesDTO clidto=new ClientesDTO(Cedula);
+			Clientes clidto=new Clientes(Cedula);
 			listado=clidao.Consultar(clidto);
 			
 			sesion2.setAttribute("cliente", listado);
@@ -75,9 +75,9 @@ public class Ventas extends HttpServlet {
 		if(request.getParameter("Consultar1")!=null) {
 			long codigoProducto;
 			
-			ProductosDTO listProductos;
+			Producto listProductos;
 			codigoProducto=Long.parseLong(request.getParameter("CodigoProducto1"));
-			ProductosDTO prodto=new ProductosDTO(codigoProducto);
+			Producto prodto=new Producto(codigoProducto);
 			ProductosDAO prodao=new ProductosDAO();
 			listProductos=prodao.ConsultarProducto(prodto);
 			iva=listProductos.getIvacompra();
@@ -88,9 +88,9 @@ public class Ventas extends HttpServlet {
 		if(request.getParameter("Consultar2")!=null) {
 			long codigoProducto;
 			
-			ProductosDTO listProductos;
+			Producto listProductos;
 			codigoProducto=Long.parseLong(request.getParameter("CodigoProducto2"));
-			ProductosDTO prodto=new ProductosDTO(codigoProducto);
+			Producto prodto=new Producto(codigoProducto);
 			ProductosDAO prodao=new ProductosDAO();
 			listProductos=prodao.ConsultarProducto(prodto);
 			iva2=listProductos.getIvacompra();
@@ -101,9 +101,9 @@ public class Ventas extends HttpServlet {
 		if(request.getParameter("Consultar3")!=null) {
 			long codigoProducto;
 			
-			ProductosDTO listProductos;
+			Producto listProductos;
 			codigoProducto=Long.parseLong(request.getParameter("CodigoProducto3"));
-			ProductosDTO prodto=new ProductosDTO(codigoProducto);
+			Producto prodto=new Producto(codigoProducto);
 			ProductosDAO prodao=new ProductosDAO();
 			listProductos=prodao.ConsultarProducto(prodto);
 			iva3=listProductos.getIvacompra();
@@ -172,7 +172,7 @@ public class Ventas extends HttpServlet {
 				ValorVenta=TotConIva;
 				CedCliente=Long.parseLong(CedulaCliente);
 				CedUsuario=Long.parseLong(CedulaUsuario);
-				VentasDTO vendto=new VentasDTO(CedCliente, CedUsuario, ValorVenta, TotalVenta, Iva);
+				Venta vendto=new Venta(CedCliente, CedUsuario, ValorVenta, TotalVenta, Iva);
 				VentasDAO vendao=new VentasDAO();
 				ress=vendao.ingresarVenta(vendto);
 				
@@ -182,8 +182,8 @@ public class Ventas extends HttpServlet {
 					long CodProducto;
 					double IVenta,TVenta,VVenta;
 					boolean x;
-					VentasDTO venDTO;
-					DetalleVentaDTO detalleDTO;
+					Venta venDTO;
+					DetalleVenta detalleDTO;
 					DetalleVentaDAO detalleDAO;
 					long codProd=Long.parseLong(request.getParameter("CodigoProducto1"));
 					VentasDAO veDAO=new VentasDAO();
@@ -195,7 +195,7 @@ public class Ventas extends HttpServlet {
 						IVenta=venDTO.getIvaventa();
 						TVenta=venDTO.getTotal_venta();
 						VVenta=venDTO.getIvaventa();
-						detalleDTO =new DetalleVentaDTO(Cantidad,codProd, CodProducto,  IVenta, TVenta, VVenta);
+						detalleDTO =new DetalleVenta(Cantidad,codProd, CodProducto,  IVenta, TVenta, VVenta);
 						detalleDAO=new DetalleVentaDAO();
 						x=detalleDAO.DetalleVenta(detalleDTO);
 						if(x) {
@@ -213,7 +213,7 @@ public class Ventas extends HttpServlet {
 						IVenta=venDTO.getIvaventa();
 						TVenta=venDTO.getTotal_venta();
 						VVenta=venDTO.getIvaventa();
-						detalleDTO =new DetalleVentaDTO(Cantidad, CodProducto, codProd, IVenta, TVenta, VVenta);
+						detalleDTO =new DetalleVenta(Cantidad, CodProducto, codProd, IVenta, TVenta, VVenta);
 						detalleDAO=new DetalleVentaDAO();
 						x=detalleDAO.DetalleVenta(detalleDTO);
 						if(x) {
@@ -231,7 +231,7 @@ public class Ventas extends HttpServlet {
 						IVenta=venDTO.getIvaventa();
 						TVenta=venDTO.getTotal_venta();
 						VVenta=venDTO.getIvaventa();
-						detalleDTO =new DetalleVentaDTO(Cantidad, CodProducto, codProd, IVenta, TVenta, VVenta);
+						detalleDTO =new DetalleVenta(Cantidad, CodProducto, codProd, IVenta, TVenta, VVenta);
 						detalleDAO=new DetalleVentaDAO();
 						x=detalleDAO.DetalleVenta(detalleDTO);
 						if(x) {

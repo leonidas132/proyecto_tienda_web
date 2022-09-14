@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import modelo.ventasclientesDAO;
-import modelo.ventasclientesDTO;
+import modelo.Ventascliente;
 
 /**
  * Servlet implementation class consultageneralventas
@@ -45,9 +45,9 @@ public class consultageneralventas extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out=response.getWriter();
 		
-		ArrayList<ventasclientesDTO>lista=new ArrayList<ventasclientesDTO>();
+		ArrayList<Ventascliente>lista=new ArrayList<Ventascliente>();
 		ventasclientesDAO vdao= new ventasclientesDAO();
-		ventasclientesDTO vdto= new ventasclientesDTO();
+		Ventascliente vdto= new Ventascliente();
 		lista=vdao.consultasgeneralventas();
 		Gson son=new Gson();
 		out.print(son.toJson(lista));

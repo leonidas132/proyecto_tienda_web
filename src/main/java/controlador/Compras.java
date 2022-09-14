@@ -14,14 +14,14 @@ import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
 import modelo.ClientesDAO;
-import modelo.ClientesDTO;
+import modelo.Clientes;
 import modelo.DetalleVentaDAO;
-import modelo.DetalleVentaDTO;
+import modelo.DetalleVenta;
 import modelo.ProductosDAO;
-import modelo.ProductosDTO;
+import modelo.Producto;
 import modelo.VentasDAO;
-import modelo.VentasDTO;
-import modelo.ventasclientesDTO;
+import modelo.Venta;
+import modelo.Ventascliente;
 
 /**
  * Servlet implementation class Compras
@@ -32,12 +32,12 @@ public class Compras extends HttpServlet {
 	
 	
 	ProductosDAO pdao = new ProductosDAO();
-	ProductosDTO pdto = new ProductosDTO();
-	List<ProductosDTO> ProductosDTO = new ArrayList<ProductosDTO>();
+	Producto pdto = new Producto();
+	List<Producto> Producto = new ArrayList<Producto>();
 	
 	
-	VentasDTO vendto=new VentasDTO();
-	List<VentasDTO> ListaVentas = new ArrayList<>();
+	Venta vendto=new Venta();
+	List<Venta> ListaVentas = new ArrayList<>();
 	
 	boolean x;
 	boolean ress;
@@ -51,14 +51,14 @@ public class Compras extends HttpServlet {
 	double TotalsinIva;
 	double TotalIVA;
 	String Nombre_Producto;
-	ProductosDTO listProductos;
+	Producto listProductos;
 	
-	ClientesDTO clidto;
+	Clientes clidto;
 	ClientesDAO clidao;
-	ClientesDTO registro;
+	Clientes registro;
 	
-	VentasDTO venDTO;
-	DetalleVentaDTO detalleDTO;
+	Venta venDTO;
+	DetalleVenta detalleDTO;
 	DetalleVentaDAO detalleDAO;
 	
 	Long Cedula_Usuario;
@@ -97,7 +97,7 @@ public class Compras extends HttpServlet {
 		if(request.getParameter("BuscarCliente")!=null) {
 			
 			Cedula_Cliente = (long) Integer.parseInt(request.getParameter("Cedula_Cliente"));
-			clidto = new ClientesDTO(Cedula_Cliente);
+			clidto = new Clientes(Cedula_Cliente);
 			clidao = new ClientesDAO();
 			registro = clidao.Consultar(clidto);
 			Sesion.setAttribute("Registro", registro);
@@ -108,7 +108,7 @@ public class Compras extends HttpServlet {
 		//buscar Productos en la Interface de Carro de Ventas
 		if(request.getParameter("BuscarProducto")!=null) {
 			long Codigo_Producto = (long) Integer.parseInt(request.getParameter("Codigo_Producto"));
-			ProductosDTO prodto = new ProductosDTO(Codigo_Producto);
+			Producto prodto = new Producto(Codigo_Producto);
 			ProductosDAO prodao = new ProductosDAO();
 			listProductos = prodao.ConsultarProducto(prodto);
 			Sesion.setAttribute("Producto", listProductos);
@@ -126,7 +126,7 @@ public class Compras extends HttpServlet {
 			Nombre_Producto=request.getParameter("nom_Producto");
 			Iva=listProductos.getIvacompra();
 			SinIva=listProductos.getPrecio_compra();
-			vendto=new VentasDTO();
+			vendto=new Venta();
 			vendto.setCodigo_Producto(Codigo);
 			vendto.setPrecio_Procuto(Precio);
 			vendto.setCantidad(Cantidad);
@@ -149,7 +149,7 @@ public class Compras extends HttpServlet {
 		
 		if(request.getParameter("GenerarVenta")!=null) {
 			Cedula_Usuario=(long) Integer.parseInt(request.getParameter("CedulaUsuario"));
-			VentasDTO vendto=new VentasDTO(Cedula_Cliente, Cedula_Usuario, TotalIVA, TotalsinIva, TotalPagar);
+			Venta vendto=new Venta(Cedula_Cliente, Cedula_Usuario, TotalIVA, TotalsinIva, TotalPagar);
 			VentasDAO vendao=new VentasDAO();
 			ress=vendao.ingresarVenta(vendto);
 			//registrar Ventas y Detalle Ventas
@@ -163,7 +163,7 @@ public class Compras extends HttpServlet {
 					venDTO=veDAO.consultarCodigo();
 					Codigo_Venta=venDTO.getCodigo_venta();
 					
-					detalleDTO =new DetalleVentaDTO(ListaVentas.get(i).getCantidad(),ListaVentas.get(i).getCodigo_Producto(), Codigo_Venta,  TotalPagar, TotalIVA, TotalsinIva);
+					detalleDTO =new DetalleVenta(ListaVentas.get(i).getCantidad(),ListaVentas.get(i).getCodigo_Producto(), Codigo_Venta,  TotalPagar, TotalIVA, TotalsinIva);
 					detalleDAO=new DetalleVentaDAO();
 					x=detalleDAO.DetalleVenta(detalleDTO);
 					if(x) {

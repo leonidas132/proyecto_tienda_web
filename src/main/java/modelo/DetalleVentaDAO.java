@@ -16,7 +16,7 @@ public class DetalleVentaDAO {
 	PreparedStatement ps;
 	ResultSet rs;
 	
-	public boolean DetalleVenta(DetalleVentaDTO dtv) {
+	public boolean DetalleVenta(DetalleVenta dtv) {
 		boolean Resul=false;
 		
 		try {

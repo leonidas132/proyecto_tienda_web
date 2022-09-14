@@ -1,6 +1,6 @@
 package modelo;
 
-public class ClientesDTO {
+public class Clientes {
 	
 	private long Cedula_Cliente;
 	private String Nombre_Cliente;
@@ -12,8 +12,7 @@ public class ClientesDTO {
 	
 	
 	
-	public ClientesDTO(long cedula_Cliente,String nombre_Cliente, String direccion_Cliente,String telefono_Cliente, String email_Cliente, String ciduad_Cliente 
-			) {
+	public Clientes(long cedula_Cliente,String nombre_Cliente, String direccion_Cliente,String telefono_Cliente, String email_Cliente, String ciduad_Cliente ) {
 	
 		this.Cedula_Cliente = cedula_Cliente;
 		this.Nombre_Cliente = nombre_Cliente;
@@ -24,12 +23,12 @@ public class ClientesDTO {
 	}
 	
 
-	public ClientesDTO() {
+	public Clientes() {
 		super();
 	}
 
 
-	public ClientesDTO(long cedula_Cliente) {
+	public Clientes(long cedula_Cliente) {
 		Cedula_Cliente = cedula_Cliente;
 	}
 

@@ -1,12 +1,12 @@
 package modelo;
 
-public class ventasclientesDTO {
+public class Ventascliente {
     private long cedula;
     private String Nombre;
     private double totalventas;
     
     
-	public ventasclientesDTO(long cedula, String nombre, double totalventas) {
+	public Ventascliente(long cedula, String nombre, double totalventas) {
 		super();
 		this.cedula = cedula;
 		Nombre = nombre;
@@ -14,7 +14,7 @@ public class ventasclientesDTO {
 	}
 
 
-	public ventasclientesDTO() {
+	public Ventascliente() {
 		super();
 	}
 

@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 
 import modelo.ClientesDAO;
-import modelo.ClientesDTO;
+import modelo.Clientes;
 
 /**
  * Servlet implementation class CRUDClientes
@@ -50,9 +50,9 @@ public class CRUDClientes extends HttpServlet {
 		String Telefono_Cliente;
 		String Ciudad_Clietne;
 		
-		ClientesDTO clidto;
+		Clientes clidto;
 		ClientesDAO clidao;
-		ClientesDTO registro;
+		Clientes registro;
 		
 		
 		
@@ -65,7 +65,7 @@ public class CRUDClientes extends HttpServlet {
 			Telefono_Cliente=request.getParameter("Telefono");
 			Email_Cliente=request.getParameter("Correo");
 			Ciudad_Cliente=request.getParameter("Ciudad");
-		    clidto=new ClientesDTO(Cedula_Cliente,Nombre_Cliente, Direccion_Cliente,Telefono_Cliente, Email_Cliente, Ciudad_Cliente  );
+		    clidto=new Clientes(Cedula_Cliente,Nombre_Cliente, Direccion_Cliente,Telefono_Cliente, Email_Cliente, Ciudad_Cliente  );
 			clidao=new ClientesDAO();
 			X=clidao.insertarClientes(clidto);
 		    System.out.println(X);
@@ -92,7 +92,7 @@ public class CRUDClientes extends HttpServlet {
 
 			if(request.getParameter("Buscar")!=null) { 
 			Cedula_Cliente=Long.parseLong(request.getParameter("Cedula"));
-			clidto=new ClientesDTO(Cedula_Cliente);
+			clidto=new Clientes(Cedula_Cliente);
 			clidao= new ClientesDAO();
 			registro=clidao.Consultar(clidto);
 			if(registro!=null) {
@@ -133,7 +133,7 @@ public class CRUDClientes extends HttpServlet {
 			Telefono_Cliente=request.getParameter("Telefono");
 			Ciudad_Cliente= request.getParameter("ciudad");
 			
-			clidto=new ClientesDTO(Cedula_Cliente, Direccion_Cliente, Email_Cliente, Nombre_Cliente, Telefono_Cliente, Ciudad_Cliente);
+			clidto=new Clientes(Cedula_Cliente, Direccion_Cliente, Email_Cliente, Nombre_Cliente, Telefono_Cliente, Ciudad_Cliente);
 			clidao=new ClientesDAO();
 			Dat=clidao.Actualizar(clidto);
 			if(Dat>0) {
@@ -151,7 +151,7 @@ public class CRUDClientes extends HttpServlet {
 		if(request.getParameter("Borrar")!=null) {
 			int x=0;
 			Cedula_Cliente=Long.parseLong(request.getParameter("Cedula"));
-			clidto =new ClientesDTO(Cedula_Cliente);
+			clidto =new Clientes(Cedula_Cliente);
 			clidao =new ClientesDAO();
 			
 			x=clidao.Eliminar(clidto);

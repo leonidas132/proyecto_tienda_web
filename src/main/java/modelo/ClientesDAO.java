@@ -14,9 +14,9 @@ public class ClientesDAO {
 		Connection cnn=con.conexionbd();
 		PreparedStatement ps;
 		ResultSet rs;
-		ClientesDTO clientedto = null;
+		Clientes clientedto = null;
 		
-		public boolean insertarClientes(ClientesDTO cli) {
+		public boolean insertarClientes(Clientes cli) {
 			int r;
 			boolean dat=false;
 			try {
@@ -41,13 +41,13 @@ public class ClientesDAO {
 			return dat;
 		}
 		
-		public ClientesDTO Consultar(ClientesDTO cli) {
+		public Clientes Consultar(Clientes cli) {
 			try {
 				ps=cnn.prepareStatement("SELECT * FROM clientes WHERE cedula_cliente=?");
 				ps.setLong(1, cli.getCedula_Cliente());
 				rs=ps.executeQuery();
 			if(rs.next()) {
-				clientedto=new ClientesDTO(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
+				clientedto=new Clientes(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
 			}
 				else {
 					return null;
@@ -60,7 +60,7 @@ public class ClientesDAO {
 		}
 		
 		
-		public int Actualizar (ClientesDTO cli) {
+		public int Actualizar (Clientes cli) {
 			int x=0;
 			try {
 				ps=cnn.prepareStatement("UPDATE clientes SET direccion_cliente=?, email_cliente=?, nombre_cliente=?, telefono_cliente=?, ciudad_cliente=? WHERE cedula_cliente=?");
@@ -82,7 +82,7 @@ public class ClientesDAO {
 			}
 		
 		
-		public int Eliminar (ClientesDTO cli) {
+		public int Eliminar (Clientes cli) {
 			int x=0;
 			try {
 				ps=cnn.prepareStatement("DELETE FROM clientes WHERE cedula_cliente=?");
@@ -96,13 +96,13 @@ public class ClientesDAO {
 			return x;	
 		}
 		
-		public ArrayList<ClientesDTO>consultageneralcliente(){
-			ArrayList<ClientesDTO>lista =new ArrayList<ClientesDTO>();
+		public ArrayList<Clientes>consultageneralcliente(){
+			ArrayList<Clientes>lista =new ArrayList<Clientes>();
 			try {
 				ps=cnn.prepareStatement("SELECT *FROM clientes");
 				rs=ps.executeQuery();
 				while(rs.next()) {
-				    clientedto= new	ClientesDTO (rs.getLong(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
+				    clientedto= new	Clientes (rs.getLong(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
 				    lista.add(clientedto);
 				    		
 				    }

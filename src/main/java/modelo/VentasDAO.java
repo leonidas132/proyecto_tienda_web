@@ -16,10 +16,10 @@ public class VentasDAO {
 	PreparedStatement ps;
 	ResultSet rs;
 	
-	VentasDTO vendto;
+	Venta vendto;
 	
 	
-	public boolean ingresarVenta(VentasDTO ve) {
+	public boolean ingresarVenta(Venta ve) {
 		
 		boolean Resultado=false;
 		
@@ -41,14 +41,14 @@ public class VentasDAO {
 		return Resultado;
 	}
 	
-	public VentasDTO consultarCodigo() {
+	public Venta consultarCodigo() {
 		
 		try {
 			ps=cnn.prepareStatement("SELECT MAX(codigo_venta),cedula_cliente,cedula_usuario,ivaventa,total_venta,valor_venta AS id FROM ventas");
 			rs=ps.executeQuery();
 			
 			if(rs.next()) {
-				vendto=new VentasDTO(rs.getLong(1), rs.getLong(2), rs.getLong(3), rs.getDouble(4), rs.getDouble(5),rs.getDouble(6));
+				vendto=new Venta(rs.getLong(1), rs.getLong(2), rs.getLong(3), rs.getDouble(4), rs.getDouble(5),rs.getDouble(6));
 				//JOptionPane.showMessageDialog(null, vendto);
 			}
 		} catch (SQLException e) {
