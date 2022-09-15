@@ -4,7 +4,7 @@ package modelo;
 import java.sql.*;
 import java.util.ArrayList;
 
-import controlador.Conexion;
+import interfacejdbc.Conexion;
 
 public class ventasclientesDAO {
     Conexion con= new Conexion();

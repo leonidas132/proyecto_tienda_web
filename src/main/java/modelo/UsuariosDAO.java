@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import controlador.Conexion;
+import interfacejdbc.Conexion;
 
 public class UsuariosDAO {
 	Conexion con=new Conexion();

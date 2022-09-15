@@ -9,7 +9,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import controlador.Conexion;
+import interfacejdbc.Conexion;
 
 public class ProductosDAO {
 	

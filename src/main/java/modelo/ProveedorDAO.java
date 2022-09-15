@@ -2,7 +2,7 @@ package modelo;
 
 import java.sql.*;
 
-import controlador.Conexion;
+import interfacejdbc.Conexion;
 
 public class ProveedorDAO {
 //esta clase hace referencia a todo lo que tiene que ver con la base de datos y su consultas //

@@ -1,12 +1,20 @@
 package implementacion;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 import interfacesImplementacion.IClientes;
 import modelo.Clientes;
 
 public class ImpClientes implements IClientes {
-
+	private PreparedStatement preparedStatementBuscarId;
+	private PreparedStatement preparedStatementInsertar;
+	private PreparedStatement preparedStatementModificar;
+	private PreparedStatement preparedStatementEliminar;
+	private PreparedStatement preparedStatementListar;
+    
+	
 	@Override
 	public Clientes getConsultar(Long k) {
 		// TODO Auto-generated method stub
@@ -15,7 +23,7 @@ public class ImpClientes implements IClientes {
 
 	@Override
 	public boolean getInsertar(Clientes e) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 

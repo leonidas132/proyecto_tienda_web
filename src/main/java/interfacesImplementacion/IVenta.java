@@ -1,5 +1,8 @@
 package interfacesImplementacion;
 
-public interface IVenta {
+import interfacejdbc.DAOgenery;
+import modelo.Venta;
+
+public interface IVenta extends DAOgenery<Venta,Long>{
 
 }

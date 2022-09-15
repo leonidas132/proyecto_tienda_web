@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
-import controlador.Conexion;
+import interfacejdbc.Conexion;
 
 public class VentasDAO {
 	
